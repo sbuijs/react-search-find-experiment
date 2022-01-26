@@ -1,0 +1,189 @@
+.App{
+  padding: 3rem;;
+}
+
+#search-component{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 4rem;
+      height: 70px;
+}
+
+#search-results.hidden{
+display: none;
+}
+
+#search-form{
+  width: 80vw;
+  display: flex;
+  position: absolute;
+  z-index: 4;
+}
+
+
+.form-control:focus{
+box-shadow: none;
+border: 1px solid black;
+}
+
+.btn-dark:focus{
+ box-shadow: none;
+
+}
+
+#search-form label{
+    flex-grow: 1;
+    height: 100%;
+    margin-bottom: 0;
+    position: relative;
+}
+
+button{
+      height: 38px;
+      margin-left: 10px;
+}
+
+table{
+  text-align: left;
+      min-width: 100%;
+}
+
+h2{
+  margin-bottom: 23px;
+}
+
+#loading-status{
+  text-align: end;
+}
+#advisors{
+  margin-bottom: 1rem;
+  min-height: 430px;
+}
+#advisors table thead tr{
+  background-color: lightgray;
+}
+#advisors table thead th{
+    width: 33%;
+}
+#advisors table tbody td a{
+    color: black;
+    display: flex;
+}
+#advisors table tbody td a svg{
+    margin-right: 8px;
+}
+
+
+#pagination{
+      display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+/* .pagination{
+    display: flex;
+    flex-direction: row;
+}
+
+.pagination__page-item{
+
+    list-style: none;
+    
+    text-align: center;
+    margin-right: 10px;
+}
+
+
+.pagination__page-link{
+      padding: 10px;
+      background-color: lightgray;
+        width: 20px;
+        color: black;
+        text-decoration: none;
+}
+
+.pagination__page-link.active{
+      background-color: gray;
+}
+
+.pagination__page-link:hover{
+      text-decoration: underline;
+} */
+
+
+.search-autocomplete-component{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.search-autocomplete-component input{
+  flex-grow: 1;
+}
+
+.no-suggestions .error{
+  color: orangered;
+}
+.no-suggestions p{
+color: grey;
+  font-size: 14px;
+  margin-bottom: .2rem;
+}
+  .no-suggestions {
+  padding-bottom: 0.5rem;
+  margin-top: .5rem;
+}
+
+
+.suggestions {
+  padding-left: 0;
+  list-style: none;
+  border: 1px solid grey;
+  background-color: white;
+}
+.suggestions li {
+  padding: 0.6rem;
+  font-size: 14px;
+}
+.suggestion-active,
+.suggestions li:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.suggestions li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+}
+
+
+
+/* Pagination */
+
+.page-link,  .page-link:hover, .page-link:focus{
+  color: black;
+}
+
+.page-link:focus{
+box-shadow: none;
+}
+
+.page-item.active .page-link{
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.page-item-group{
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+}
+.pagination .page-link.page-link--dots{
+  border: none;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.page-item-group .page-item .page-link{
+  border: none;
+}
