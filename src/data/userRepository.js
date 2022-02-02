@@ -16,7 +16,6 @@ export const fetchAdvisors = () => {
                 let advisor = {
                     id: uuidv4(),
                     Bedrijfsnaam: advisorData[0],
-                    // Adres: `${advisorData[1]}, ${advisorData[2]}, ${advisorData[3]}`,
                     Adres: {
                         Straatnaam: advisorData[1],
                         //remove spces from postcode
@@ -32,5 +31,28 @@ export const fetchAdvisors = () => {
                 parsedAdvisors.push(advisor)
             });
             return parsedAdvisors;
+        })
+}
+
+
+export const fetchAliases = () => {
+    return fetch('/data/aliasses_2021-12-06-075438_helz.csv')
+        .then((response) => response.text())
+        .then(csv => {
+
+            const rawAliasses = csv.split('\n');
+            const parsedAliasses = [];
+
+            rawAliasses.forEach(element => {
+                const data = element.split(',')
+
+                let city = {
+                    alias: data[0],
+                    original: data[1]
+                }
+                parsedAliasses.push(city)
+            });
+            console.log(parsedAliasses);
+            return parsedAliasses;
         })
 }

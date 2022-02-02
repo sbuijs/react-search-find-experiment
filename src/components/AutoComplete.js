@@ -29,8 +29,6 @@ export const AutoComplete = ({ suggestions, onSearchTerm }) => {
         setSearchInput(userInput);
 
         //set the search term with the user input
-        // console.log(`handleInput userInput: ${userInput}`);
-
         onSearchTerm(userInput);
 
         // setFilteredSuggestions(currentSuggestions)
@@ -91,7 +89,7 @@ export const AutoComplete = ({ suggestions, onSearchTerm }) => {
                 className="form-control"
                 autoComplete="off"
                 id="search-field"
-                onKeyDown={onKeyDown}
+                onKeyDown={(e) => onKeyDown(e)}
                 value={searchInput}
                 onChange={(e) => handleInput(e)}
                 placeholder='Vul hier de plaatsnaam in'

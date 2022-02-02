@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { fetchAdvisors } from './data/userRepository';
+import { fetchAliases } from './data/userRepository';
 import './App.css';
 
 //components
@@ -16,20 +17,22 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [advisorsPerPage] = useState(10);
   const [maxAmountPaginationPages] = useState(7);
+  const [aliases, setAliases] = useState([]);
+
 
   //get data from csv file and add it to the advisorArray
   useEffect(() => {
     // only works when the file is in the public folder
-    fetchAdvisors().then(values => setAdvisors(values));
+    fetchAdvisors().then(values => setAdvisors(values))
+    fetchAliases().then(values => setAliases(values))
   }, []);
+
+
 
   const filteredAdvisors = useMemo(() => {
     const newArr = [];
     advisors.forEach(advisor => {
       if (
-        advisor.Bedrijfsnaam.toLowerCase()
-          .includes(searchQuery.toLowerCase())
-        ||
         advisor.Adres.Woonplaats.toLowerCase()
           .includes(searchQuery.toLowerCase())) {
         newArr.push(advisor)

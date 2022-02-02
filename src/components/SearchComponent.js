@@ -15,9 +15,8 @@ export const SearchComponent = ({
         e.preventDefault();
         onSearch(searchTerm)
         setResultsVisible(true)
-        console.log(`handleSubmit`);
-        console.log(suggestion);
     }
+
 
     return (
         <section id="search-component">
