@@ -44,15 +44,14 @@ export const fetchAliases = () => {
             const parsedAliasses = [];
 
             rawAliasses.forEach(element => {
-                const data = element.split(',')
+                const aliasData = element.split(',')
 
-                let city = {
-                    alias: data[0],
-                    original: data[1]
+                let alias = {
+                    alias: aliasData[0],
+                    original: aliasData[1]
                 }
-                parsedAliasses.push(city)
+                parsedAliasses.push(alias)
             });
-            console.log(parsedAliasses);
             return parsedAliasses;
         })
 }

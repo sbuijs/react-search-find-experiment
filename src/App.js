@@ -25,8 +25,27 @@ function App() {
     // only works when the file is in the public folder
     fetchAdvisors().then(values => setAdvisors(values))
     fetchAliases().then(values => setAliases(values))
+    setAdvisors(advisorsCorrectedCityName)
   }, []);
 
+
+  //checks if the city name corresponds with an alias 
+  // changes the alias to the original naming of the city
+  const advisorsCorrectedCityName = useMemo(() => {
+    let advisorsCorrectCityName = [];
+    advisors.forEach(advisor => {
+      aliases.forEach(alias => {
+        //if the city is the same as the alias
+        if (advisor.Adres.Woonplaats === alias.alias) {
+          //replace the city name with the original of the alias
+          advisor.Adres.Woonplaats = alias.original
+        }
+      });
+      //add the advisor to the array
+      advisorsCorrectCityName.push(advisor)
+    });
+    return advisorsCorrectCityName
+  }, [advisors, aliases]);
 
 
   const filteredAdvisors = useMemo(() => {
@@ -38,10 +57,8 @@ function App() {
         newArr.push(advisor)
       }
     });
-    // console.log(`Dit is de searchQuery: ${searchQuery}`);
     return newArr
   }, [advisors, searchQuery]);
-
 
   //Pagination variables
   const indexOfLastAdvisor = useMemo(() => {
@@ -74,7 +91,8 @@ function App() {
     //sort on alphabetical order
     filteredSugestions.sort()
     return filteredSugestions
-  }, [advisors]);
+  }, [advisorsCorrectedCityName]);
+
 
 
   return (

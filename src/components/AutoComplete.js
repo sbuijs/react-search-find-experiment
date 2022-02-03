@@ -19,6 +19,7 @@ export const AutoComplete = ({ suggestions, onSearchTerm }) => {
         );
     }, [suggestions, searchInput]);
 
+
     //when the user changes the input value this method will fire
     const handleInput = (e) => {
         e.preventDefault()
@@ -53,7 +54,6 @@ export const AutoComplete = ({ suggestions, onSearchTerm }) => {
         //hide the suggestions list
         setShowSuggestions(false)
     }
-
 
     const onKeyDown = (e) => {
         if (e.keyCode === 13) {
@@ -104,3 +104,9 @@ export const AutoComplete = ({ suggestions, onSearchTerm }) => {
         </>
     );
 }
+
+
+
+
+
+
