@@ -20,6 +20,10 @@ function App() {
   const [aliases, setAliases] = useState([]);
 
 
+  useEffect(() => {
+    // console.log(`searchQuery: ${searchQuery} `);
+  }, [searchQuery]);
+
   //get data from csv file and add it to the advisorArray
   useEffect(() => {
     // only works when the file is in the public folder
@@ -100,9 +104,9 @@ function App() {
       <SearchComponent
         suggestions={suggestions}
         onSearch={setSearchQuery}
-        setSearchQuery={setSearchQuery}
         setResultsVisible={setResultsVisible}
       />
+
       <SearchResults
         resultsVisible={resultsVisible}
         searchQuery={searchQuery}
