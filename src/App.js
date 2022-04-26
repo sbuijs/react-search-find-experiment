@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { fetchAdvisors } from './data/userRepository';
+import { fetchAliases } from './data/userRepository';
 import './App.css';
 
 //components
@@ -16,29 +17,52 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [advisorsPerPage] = useState(10);
   const [maxAmountPaginationPages] = useState(7);
+  const [aliases, setAliases] = useState([]);
+
+
+  useEffect(() => {
+    // console.log(`searchQuery: ${searchQuery} `);
+  }, [searchQuery]);
 
   //get data from csv file and add it to the advisorArray
   useEffect(() => {
     // only works when the file is in the public folder
-    fetchAdvisors().then(values => setAdvisors(values));
+    fetchAdvisors().then(values => setAdvisors(values))
+    fetchAliases().then(values => setAliases(values))
+    setAdvisors(advisorsCorrectedCityName)
   }, []);
+
+
+  //checks if the city name corresponds with an alias 
+  // changes the alias to the original naming of the city
+  const advisorsCorrectedCityName = useMemo(() => {
+    let advisorsCorrectCityName = [];
+    advisors.forEach(advisor => {
+      aliases.forEach(alias => {
+        //if the city is the same as the alias
+        if (advisor.Adres.Woonplaats === alias.alias) {
+          //replace the city name with the original of the alias
+          advisor.Adres.Woonplaats = alias.original
+        }
+      });
+      //add the advisor to the array
+      advisorsCorrectCityName.push(advisor)
+    });
+    return advisorsCorrectCityName
+  }, [advisors, aliases]);
+
 
   const filteredAdvisors = useMemo(() => {
     const newArr = [];
     advisors.forEach(advisor => {
       if (
-        advisor.Bedrijfsnaam.toLowerCase()
-          .includes(searchQuery.toLowerCase())
-        ||
         advisor.Adres.Woonplaats.toLowerCase()
           .includes(searchQuery.toLowerCase())) {
         newArr.push(advisor)
       }
     });
-    // console.log(`Dit is de searchQuery: ${searchQuery}`);
     return newArr
   }, [advisors, searchQuery]);
-
 
   //Pagination variables
   const indexOfLastAdvisor = useMemo(() => {
@@ -71,7 +95,8 @@ function App() {
     //sort on alphabetical order
     filteredSugestions.sort()
     return filteredSugestions
-  }, [advisors]);
+  }, [advisorsCorrectedCityName]);
+
 
 
   return (
@@ -79,9 +104,9 @@ function App() {
       <SearchComponent
         suggestions={suggestions}
         onSearch={setSearchQuery}
-        setSearchQuery={setSearchQuery}
         setResultsVisible={setResultsVisible}
       />
+
       <SearchResults
         resultsVisible={resultsVisible}
         searchQuery={searchQuery}

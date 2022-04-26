@@ -4,7 +4,13 @@ export const SuggestionsListComponent = ({
   filteredSuggestions,
   activeSuggestionIndex,
   onClick,
-  searchInput }) => {
+  searchInput
+}) => {
+
+  const onClickHandler = (e) => {
+    const cityName = e.target.getAttribute('value')
+    onClick(e, cityName)
+  }
 
   return filteredSuggestions.length ? (
     <ul className="suggestions">
@@ -17,8 +23,9 @@ export const SuggestionsListComponent = ({
         return (
           <li
             className={className}
+            value={suggestion}
             key={suggestion}
-            onClick={() => onClick(suggestion)}
+            onClick={(e) => onClickHandler(e)}
           >
             {suggestion}
           </li>
