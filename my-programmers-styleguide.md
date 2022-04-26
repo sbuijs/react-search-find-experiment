@@ -12,7 +12,7 @@
 
 ## Naming conventions
 1. Don't use generic names
-2. Use clickHandler etc. so that it is clear that it is not a function that is 
+2. Use clickHandler/onClick etc. so that it is clear that it is not a function that is 
 called by us somewhere in my code but it is a function attached to an event listener
 
 
@@ -28,10 +28,12 @@ called by us somewhere in my code but it is a function attached to an event list
 <div>{date.toLocaleString('en-US', { month: 'long' })}</div> || this is too long
 When it get's too long or harder to read, create a variable for it like so:
 
-const month = date.toLocaleString('en-US', { month: 'long' })
+const month = useMemo(() => date.toLocaleString('en-US', { month: 'long' }), [date])
 <div>{month}</div>
 
+## Line length
 
+Preferably 80 characters max. Never go above 100 characters.
 
 
 ## How to write..
@@ -42,7 +44,8 @@ const month = date.toLocaleString('en-US', { month: 'long' })
                         <button
                             type="submit"
                             value="Submit"
-                            className={`btn btn-dark`}>
+                            className={`btn btn-dark`}
+                        >
                             Zoek adviseurs
                         </button>
 2. When a tag doesn't contain a full closing tag, write it like this:

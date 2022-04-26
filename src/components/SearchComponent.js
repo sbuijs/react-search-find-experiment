@@ -19,7 +19,6 @@ export const SearchComponent = ({ setResultsVisible, onSearch, suggestions }) =>
     //when user presses button or enter
     const handleSubmit = (e, searchValue) => {
         e.preventDefault()
-
         setShowSuggestions(false)
         setResultsVisible(true)
         setActiveSuggestionIndex(0)
