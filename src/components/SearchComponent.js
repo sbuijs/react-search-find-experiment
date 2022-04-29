@@ -91,12 +91,12 @@ export const SearchComponent = ({ setResultsVisible, onSearch, suggestions }) =>
                                     searchInput={searchInput}
                                 />}
                         </label>
-                        <button
+                        {/* <button
                             type="submit"
                             value="Submit"
                             className={`btn btn-dark`}>
                             Zoek adviseurs
-                        </button>
+                        </button> */}
                     </div>
                 </form>
             </section >
