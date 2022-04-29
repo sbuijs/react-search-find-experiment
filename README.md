@@ -12,7 +12,9 @@ Created pagination component<br/>
 <br/>
 <br/>
 
-<img width="1552" alt="Screenshot 2022-04-29 at 11 17 28" src="https://user-images.githubusercontent.com/1607627/165917441-40cbb85a-807c-4f2e-8d82-e949afe3bf60.png">
+<img width="1552" alt="Screenshot 2022-04-29 at 11 18 23" src="https://user-images.githubusercontent.com/1607627/165917580-be68fda3-4580-4d1d-9b49-ebda1e1859cd.png">
+
+
 
 ## Built With
 - ReactJs
