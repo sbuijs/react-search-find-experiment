@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sbuijs/react-search-find-experiment/static/css/main.1a890ab1.css",
+    "main.js": "/sbuijs/react-search-find-experiment/static/js/main.d73de092.js",
+    "index.html": "/sbuijs/react-search-find-experiment/index.html",
+    "main.1a890ab1.css.map": "/sbuijs/react-search-find-experiment/static/css/main.1a890ab1.css.map",
+    "main.d73de092.js.map": "/sbuijs/react-search-find-experiment/static/js/main.d73de092.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a890ab1.css",
+    "static/js/main.d73de092.js"
+  ]
+}
