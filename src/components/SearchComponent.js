@@ -19,7 +19,6 @@ export const SearchComponent = ({ setResultsVisible, onSearch, suggestions }) =>
     //when user presses button or enter
     const handleSubmit = (e, searchValue) => {
         e.preventDefault()
-
         setShowSuggestions(false)
         setResultsVisible(true)
         setActiveSuggestionIndex(0)
@@ -92,12 +91,12 @@ export const SearchComponent = ({ setResultsVisible, onSearch, suggestions }) =>
                                     searchInput={searchInput}
                                 />}
                         </label>
-                        <button
+                        {/* <button
                             type="submit"
                             value="Submit"
                             className={`btn btn-dark`}>
                             Zoek adviseurs
-                        </button>
+                        </button> */}
                     </div>
                 </form>
             </section >
