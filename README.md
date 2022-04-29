@@ -5,16 +5,17 @@
   <p align="left">
       Created a searchbar with dropdown when the user starts typing.<br/>
 Created pagination component<br/>
+  Used data from a csv file.<br/>
        <a href="https://sbuijs.github.io/react-search-find-experiment/">View Demo</a>
   </p>
 </div>
 <br/>
 <br/>
 
-<img width="1552" alt="simple-guessing-game" src="https://user-images.githubusercontent.com/1607627/165161199-55d1c5bd-8ce8-4287-8c11-8f24d87e1366.png">
+<img width="1552" alt="Screenshot 2022-04-29 at 11 17 28" src="https://user-images.githubusercontent.com/1607627/165917441-40cbb85a-807c-4f2e-8d82-e949afe3bf60.png">
 
 ## Built With
-- Vanilla Javascript
+- ReactJs
 
 
 ## Contact
