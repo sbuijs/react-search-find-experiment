@@ -1,3 +1,36 @@
+<div id="top"></div>
+
+
+<h1 align="left">React search find experiment</h1>
+  <p align="left">
+      Created a searchbar with dropdown when the user starts typing.<br/>
+Created pagination component<br/>
+  Used data from a csv file.<br/>
+       <a href="https://sbuijs.github.io/react-search-find-experiment/">View Demo</a>
+  </p>
+</div>
+<br/>
+<br/>
+
+<img width="1552" alt="Screenshot 2022-04-29 at 11 18 23" src="https://user-images.githubusercontent.com/1607627/165917580-be68fda3-4580-4d1d-9b49-ebda1e1859cd.png">
+
+
+
+## Built With
+- ReactJs
+
+
+## Contact
+
+Stephanie Buijs - buijs.s@gmail.com<br/>
+Project Link: [https://github.com/sbuijs/react-search-find-experiment](https://github.com/sbuijs/react-search-find-experiment)<br/>
+
+<p align="left">(<a href="#top">back to top</a>)</p>
+
+
+---
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -2,9 +2,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 export const fetchAdvisors = () => {
-    return fetch('/data/advisors_10000--original.csv')
+    return fetch('./data/advisors_10000--original.csv')
         .then((response) => response.text())
         .then(csv => {
+            console.log(csv);
+
 
             //get advisors > split the rows into each one of the fields
             const rawAdvisors = csv.split('\n').slice(1);
