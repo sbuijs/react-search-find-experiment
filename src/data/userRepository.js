@@ -1,13 +1,25 @@
 import { v4 as uuidv4 } from 'uuid';
 
+const aliassesFileURL = "http://localhost:3000/data/aliasses_2021-12-06-075438_helz.csv"
+const advisorsFileURL = "http://localhost:3000/data/advisors_10000--original.csv"
 
-export const fetchAdvisors = () => {
-    return fetch('./data/advisors_10000--original.csv')
+export const fetchTest = () => {
+    // return fetch("http://localhost:3001/data/aliasses_2021-12-06-075438_helz.csv")
+    return fetch("http://localhost:3000/data/advisors_10000--original.csv")
         .then((response) => response.text())
         .then(csv => {
-            console.log(csv);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+}
 
+fetchTest()
 
+export const fetchAdvisors = () => {
+    return fetch(advisorsFileURL)
+        .then((response) => response.text())
+        .then(csv => {
             //get advisors > split the rows into each one of the fields
             const rawAdvisors = csv.split('\n').slice(1);
             const parsedAdvisors = [];
@@ -38,7 +50,7 @@ export const fetchAdvisors = () => {
 
 
 export const fetchAliases = () => {
-    return fetch('/data/aliasses_2021-12-06-075438_helz.csv')
+    return fetch('./data/aliasses_2021-12-06-075438_helz.csv')
         .then((response) => response.text())
         .then(csv => {
 
@@ -57,3 +69,4 @@ export const fetchAliases = () => {
             return parsedAliasses;
         })
 }
+
