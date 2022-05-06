@@ -22,6 +22,7 @@ export const SearchComponent = ({ setResultsVisible, onSearch, suggestions }) =>
         setShowSuggestions(false)
         setResultsVisible(true)
         setActiveSuggestionIndex(0)
+        // console.log(searchValue);
         onSearch(searchValue)
     }
 
@@ -37,6 +38,7 @@ export const SearchComponent = ({ setResultsVisible, onSearch, suggestions }) =>
     //when user uses keys to navigate
     const onKeyDown = (e) => {
         if (e.keyCode === 13) {
+
             const suggestion = filteredSuggestions[activeSuggestionIndex]
             setSearchInput(suggestion)
             handleSubmit(e, suggestion)
@@ -68,7 +70,8 @@ export const SearchComponent = ({ setResultsVisible, onSearch, suggestions }) =>
     return (
         <>
             <section id="search-component">
-                <form id="search-form" onSubmit={(e, value) => handleSubmit(e, value)}>
+                <form id="search-form" onSubmit={(e, value) => handleSubmit(e, searchInput)}>
+                    {/* <form id="search-form" onSubmit={(e, value) => handleSubmit(e, value)}> */}
                     <div className="mb-3 d-flex w-100">
                         <label
                             htmlFor="exampleInputEmail1search-field"
@@ -91,12 +94,14 @@ export const SearchComponent = ({ setResultsVisible, onSearch, suggestions }) =>
                                     searchInput={searchInput}
                                 />}
                         </label>
-                        {/* <button
+                        <button
                             type="submit"
                             value="Submit"
-                            className={`btn btn-dark`}>
+                            className={
+                                searchInput.length > 0 ?
+                                    'btn btn-dark' : 'btn btn-dark disabled'}>
                             Zoek adviseurs
-                        </button> */}
+                        </button>
                     </div>
                 </form>
             </section >
