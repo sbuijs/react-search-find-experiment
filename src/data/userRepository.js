@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-const aliassesFileURL = "http://localhost:3000/data/aliasses_2021-12-06-075438_helz.csv"
+// const aliassesFileURL = "http://localhost:3000/data/aliasses_2021-12-06-075438_helz.csv"
 const advisorsFileURL = "http://localhost:3000/data/advisors_10000--original.csv"
 
 export const fetchTest = () => {
